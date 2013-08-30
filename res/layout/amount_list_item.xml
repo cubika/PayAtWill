@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector_background"
+    android:gravity="center_vertical"
+    android:paddingLeft="5.0dip"
+    android:paddingRight="5.0dip" >
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3.0"
+        android:textColor="#ff777777"
+        android:textSize="18.0sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.0" >
+
+        <TextView
+            android:id="@+id/discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/TextColorBlack"
+            android:textSize="18.0sp" />
+
+        <ImageView
+            android:id="@+id/img_dai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dai" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/list_item_indicator"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4.0"
+        android:src="@android:drawable/btn_radio" />
+
+</LinearLayout>

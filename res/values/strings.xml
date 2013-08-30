@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pay</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="amount_title">当前充值号码</string>
+    <string name="select_price">选择充值面额</string>
+    <string name="select_type">选择操作类型</string>
+    <string name="item_prize">售价</string>
+    <string name="item_dai">代充</string>
+    <string name="Ensure">确定</string>
+    <string name="amount_hint">选择面额，快速支付到账</string>
+    <string name="amount_chart_hint">选择面额，快速支付到账</string>
+
+</resources>

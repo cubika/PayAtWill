@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="5.0dip"
+    android:paddingTop="5.0dip" >
+
+    <LinearLayout
+        android:id="@+id/item"
+        android:layout_width="140.0px"
+        android:layout_height="117.0px"
+        android:background="@drawable/chart_item_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="46.0px" >
+
+            <TextView
+                android:id="@+id/chart_amount"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="50元"
+                android:textColor="#ff000000" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/chart_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:duplicateParentState="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:paddingTop="2.0dip"
+                android:text="@string/item_prize"
+                android:textColor="#ff999999"
+                android:textSize="12.0sp" />
+
+            <TextView
+                android:id="@+id/chart_discount"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:gravity="center_horizontal"
+                android:text="5000元"
+                android:textColor="@drawable/chart_item_font"
+                android:textSize="18.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/content_txt"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:duplicateParentState="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:paddingTop="2.0dip"
+                android:text=""
+                android:textColor="#ff999999"
+                android:textSize="12.0sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:gravity="center_horizontal"
+                android:text="@string/item_dai"
+                android:textColor="@drawable/chart_item_font_dai"
+                android:textSize="18.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

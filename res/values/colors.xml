@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="background">#599ec7</color>
+    <color name="AppBackgroundColor">#fff7f3f7</color>
+    <color name="TextColorBlack">#ff000000</color>
+    <color name="TextColorWhite">#ffffffff</color>
+    <color name="TextColorBlue">#ff1a618f</color>
+    <color name="TextColorGray">#ff505050</color>
+    <color name="TextColorRed">#ffe26926</color>
+    <color name="TextColorBlackRed">#ffc80000</color>
+    <color name="TextColorGrayTrading">#ffa0a0a0</color>
+    <color name="TextColorButtonMainEnable">#ffa26d39</color>
+    <color name="TextColorButtonEnable">#ff666666</color>
+    <color name="TextColorButtonDisable">#ff999999</color>
+    <color name="TextColorButtonPressed">#ff854e15</color>
+    <color name="TextColorYellow">#ffffae29</color>
+    <color name="TextColorDai">#ff787878</color>
+</resources>
