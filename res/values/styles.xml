@@ -4,7 +4,7 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
+    <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -26,6 +26,12 @@
         <item name="android:listSelector">@drawable/list_selector_background</item>
         <item name="android:cacheColorHint">#00000000</item>
         <item name="android:divider">@drawable/line3</item>
+    </style>
+    
+   <style name="style_tv_BOLD">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff666666</item>
     </style>
 
 </resources>

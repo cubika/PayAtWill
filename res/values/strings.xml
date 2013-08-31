@@ -12,5 +12,11 @@
     <string name="Ensure">确定</string>
     <string name="amount_hint">选择面额，快速支付到账</string>
     <string name="amount_chart_hint">选择面额，快速支付到账</string>
-
+	<string name="scan">扫描条码结果</string>
+	<string name="not_found">扫描不到结果</string>
+	<string name="water_pay_area">缴费地区</string>
+	<string name="water_pay_company">缴费公司</string>
+	<string name="water_pay_hint">缴费单位和编号</string>
+	<string name="water_pay_number">客户编号：</string>
+	<string name="water_pay_ok">确认缴费</string>
 </resources>
