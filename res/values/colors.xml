@@ -17,4 +17,5 @@
     <color name="TextColorButtonPressed">#ff854e15</color>
     <color name="TextColorYellow">#ffffae29</color>
     <color name="TextColorDai">#ff787878</color>
+    <color name="tabBg">#4c8fc2</color>
 </resources>
