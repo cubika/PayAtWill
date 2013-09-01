@@ -1,12 +1,16 @@
 package com.example.pay;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,6 +40,7 @@ public class PhoneChargeActivity extends Activity {
         swBtn.setBackgroundResource(backIndex[index]);
         swBtn.setOnClickListener(switchListener);
         addItemToChart(getLayoutInflater());
+        addItemToList();
     }
     
     OnClickListener switchListener=new OnClickListener(){
@@ -49,11 +54,26 @@ public class PhoneChargeActivity extends Activity {
     	
     };
 
+    AdapterView.OnItemClickListener itemListener=new AdapterView.OnItemClickListener() {
 
-    private void addItemToList(LayoutInflater paramLayoutInflater)
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			View history=(View) list.getTag();
+			if(history!=null)
+				((ImageView)history).setImageState(new int[]{android.R.attr.state_empty},true);
+			ImageView indicator=(ImageView)view.findViewById(R.id.list_item_indicator);
+			indicator.setImageState(new int[]{android.R.attr.state_checked}, true);
+			list.setTag(indicator);
+		}
+	};
+
+    private void addItemToList()
     {
     	ListView lv=(ListView) list.findViewById(R.id.list_view);
-    	//lv.setAdapter(adapter);
+    	lv.setAdapter(new CustomListAdapter(this));
+    	list.findViewById(R.id.hint_info).setVisibility(8);
+    	lv.setOnItemClickListener(itemListener);
     }
     
     
@@ -80,5 +100,30 @@ public class PhoneChargeActivity extends Activity {
     	}
     }
     
-    
+    class CustomListAdapter extends BaseAdapter {   
+        private LayoutInflater mInflater;   
+        private Context mContext = null;   
+        public CustomListAdapter(Context context) {   
+            mContext = context;   
+            mInflater = LayoutInflater.from(mContext);   
+        }   
+        public Object getItem(int arg0) {   
+            return null;   
+        }   
+        public long getItemId(int position) {   
+            return position;   
+        }   
+        public int getCount() {   
+            return units.length;   
+        }   
+        public View getView(int position, View convertView,   
+                android.view.ViewGroup parent) {   
+            if (convertView == null) {   
+                convertView = mInflater.inflate(R.layout.amount_list_item, null);   
+            }   
+            ((TextView)(convertView.findViewById(R.id.amount))).setText("³ä"+units[position]+"Ôª");
+            ((TextView)(convertView.findViewById(R.id.discount))).setText("¸¶"+discounts[position]+"Ôª");
+            return convertView;   
+        }   
+    }   
 }

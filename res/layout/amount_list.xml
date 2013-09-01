@@ -7,9 +7,9 @@
 
     <ListView
         android:id="@+id/list_view"
-        style="@+style/listview"
+        style="@style/listview"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="0dp"
         android:layout_weight="1.0"
         android:fadingEdge="none" />
 

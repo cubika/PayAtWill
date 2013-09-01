@@ -31,6 +31,8 @@ public class SelectTypeActivity extends Activity implements OnClickListener {
 			startActivity(i2);
 			break;
 		case R.id.scanBar:
+			Intent i3=new Intent(SelectTypeActivity.this,ScanBarActivity.class);
+			startActivity(i3);
 			break;
 		case R.id.watchLimit:
 			break;

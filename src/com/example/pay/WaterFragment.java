@@ -12,8 +12,7 @@ public class WaterFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		TextView tv=new TextView(this.getActivity());
-		tv.setText("hello");
-		return tv;
+		View v=inflater.inflate(R.layout.water_pay_layout, null);
+		return v;
 	}
 }
