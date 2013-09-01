@@ -26,6 +26,7 @@
         <activity android:name=".PhoneChargeActivity"></activity>
         <activity android:name=".WaterPayActivity"></activity>
         <activity android:name=".ScanBarActivity"></activity>
+        <activity android:name=".AccountInfoActivity"></activity>
     </application>
 
 </manifest>

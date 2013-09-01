@@ -19,4 +19,8 @@
 	<string name="water_pay_hint">缴费单位和编号</string>
 	<string name="water_pay_number">客户编号：</string>
 	<string name="water_pay_ok">确认缴费</string>
+	<string name="account_limit">账户余额:100元</string>
+	<string name="fill_in">充值</string>
+	<string name="fill_out">提现</string>
+	<string name="account_info">当前账户信息</string>
 </resources>
