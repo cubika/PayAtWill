@@ -33,5 +33,8 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#ff666666</item>
     </style>
+    <style name="editbox" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/editbox_background</item>
+    </style>
 
 </resources>

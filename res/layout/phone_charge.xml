@@ -57,23 +57,38 @@
         android:paddingBottom="10.0dip"
         android:paddingTop="10.0dip" >
 
-        <TextView
-            android:id="@+id/phone_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10.0dip"
-            android:textColor="@color/TextColorBlack"
-            android:textSize="18.0sp" />
+        <LinearLayout
+            android:id="@+id/PhoneInputCanva"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/contact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10.0dip"
-            android:maxEms="6"
-            android:textColor="@color/TextColorGrayTrading"
-            android:textSize="16.0sp" />
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" >
+
+                <AutoCompleteTextView
+                    android:id="@+id/phone_number"
+                    style="@style/editbox"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:completionThreshold="1"
+                    android:hint="@string/phoneinput_tip"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:popupBackground="@drawable/drop_down_bg"
+                    android:singleLine="true"
+                    android:textSize="18.0sp" />
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/ContactButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:background="@drawable/phone_number_button"
+                android:nextFocusLeft="@id/phone_number" />
+        </LinearLayout>
     </RelativeLayout>
 
     <LinearLayout
