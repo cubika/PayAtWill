@@ -30,22 +30,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center"
                 android:layout_marginRight="10.0dip" >
-
-                <Button
-                    android:id="@+id/change_region_btn"
+                
+                <TextView
+                    android:id="@+id/charge_target"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/change_region_btn"
-                    android:textColor="@color/TextColorWhite"
-                    android:textSize="16.0sp" />
-
-                <Button
-                    android:id="@+id/change_mno_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/change_mno_btn"
-                    android:textColor="@color/TextColorWhite"
-                    android:textSize="16.0sp" />
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="18.0sp"/>
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>
@@ -82,7 +74,7 @@
             </FrameLayout>
 
             <ImageButton
-                android:id="@+id/ContactButton"
+                android:id="@+id/contact_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5.0dip"

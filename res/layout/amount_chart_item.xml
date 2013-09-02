@@ -54,32 +54,6 @@
                 android:textColor="@drawable/chart_item_font"
                 android:textSize="18.0sp" />
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/content_txt"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:duplicateParentState="true"
-            android:orientation="vertical" >
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5.0dip"
-                android:paddingTop="2.0dip"
-                android:text=""
-                android:textColor="#ff999999"
-                android:textSize="12.0sp" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:duplicateParentState="true"
-                android:gravity="center_horizontal"
-                android:text="@string/item_dai"
-                android:textColor="@drawable/chart_item_font_dai"
-                android:textSize="18.0sp" />
-        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
