@@ -8,6 +8,12 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -22,10 +28,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PhoneChargeActivity"></activity>
-        <activity android:name=".WaterPayActivity"></activity>
-        <activity android:name=".ScanBarActivity"></activity>
-        <activity android:name=".AccountInfoActivity"></activity>
+        <activity android:name=".PhoneChargeActivity" />
+        <activity android:name=".WaterPayActivity" />
+        <activity android:name=".ScanBarActivity" />
+        <activity android:name=".AccountInfoActivity" />
+        <activity android:name=".MipcaActivityCapture" />
     </application>
 
 </manifest>

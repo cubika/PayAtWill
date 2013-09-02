@@ -21,12 +21,19 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/scanTV"
+        android:id="@+id/scan_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="@string/not_found"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+   <ImageView
+        android:id="@+id/qrcode_bitmap"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"/>
 
 </LinearLayout>
