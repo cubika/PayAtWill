@@ -36,5 +36,9 @@
     <style name="editbox" parent="@android:style/Widget.EditText">
         <item name="android:background">@drawable/editbox_background</item>
     </style>
+    <style name="dialogActivity" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 
 </resources>

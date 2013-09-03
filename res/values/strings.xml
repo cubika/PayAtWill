@@ -27,4 +27,6 @@
 	<string name="scan_text">将二维码或条码放入框内, 即可自动扫描</string>
 	<string name="scan_title">条形码/二维码扫描</string>
 	<string name="back">返回</string>
+	<string name="warning">提示</string>
+	<string name="phone_not_empty">手机号码不能为空</string>
 </resources>

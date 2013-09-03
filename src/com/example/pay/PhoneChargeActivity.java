@@ -1,6 +1,7 @@
 package com.example.pay;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -13,9 +14,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -29,7 +32,9 @@ public class PhoneChargeActivity extends Activity {
 			R.drawable.list_switch2 };
 	private ViewGroup list, chart;
 	private ViewSwitcher switcher;
+	private Dialog dialog;
 	private ImageButton swBtn, contactBtn;
+	private AutoCompleteTextView actv;
 	private int index = 0;
 	private static final int PICK_CONTACT = 110;
 	private static final int[] units = { 1, 10, 20, 30, 50, 100, 200, 300, 500 };
@@ -41,10 +46,10 @@ public class PhoneChargeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.phone_charge);
 		switcher = (ViewSwitcher) findViewById(R.id.amount_switcher);
-		list = (ViewGroup) getLayoutInflater().inflate(R.layout.amount_list,
-				null);
-		chart = (ViewGroup) getLayoutInflater().inflate(R.layout.amount_chart,
-				null);
+		list = (ViewGroup) getLayoutInflater().inflate(R.layout.amount_list,null);
+		chart = (ViewGroup) getLayoutInflater().inflate(R.layout.amount_chart,null);
+		View alertView = getLayoutInflater().inflate(R.layout.alert_dialog, null);
+		list.findViewById(R.id.ok_btn).setOnClickListener(listener);
 		switcher.addView(chart);
 		switcher.addView(list);
 		swBtn = (ImageButton) findViewById(R.id.switcher_btn);
@@ -52,6 +57,19 @@ public class PhoneChargeActivity extends Activity {
 		swBtn.setOnClickListener(listener);
 		contactBtn = (ImageButton) findViewById(R.id.contact_button);
 		contactBtn.setOnClickListener(listener);
+		actv=(AutoCompleteTextView)findViewById(R.id.phone_number);
+		TextView message=(TextView)alertView.findViewById(R.id.alert_message);
+		Button confirm=(Button)alertView.findViewById(R.id.alert_confirm);
+		message.setText(R.string.phone_not_empty);
+		dialog = new Dialog(PhoneChargeActivity.this, R.style.dialogActivity);
+		dialog.setContentView(alertView);
+		confirm.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				if(dialog.isShowing())
+					dialog.dismiss();
+			}
+		});
 		addItemToChart(getLayoutInflater());
 		addItemToList();
 	}
@@ -70,6 +88,15 @@ public class PhoneChargeActivity extends Activity {
 				Intent intent = new Intent(Intent.ACTION_PICK,
 						ContactsContract.Contacts.CONTENT_URI);
 				startActivityForResult(intent, PICK_CONTACT);
+				break;
+			case R.id.chart_content:
+			case R.id.ok_btn:
+				if(actv.getText().toString().trim().length()==0){
+					dialog.show();
+					break;
+				}
+				Intent intent2=new Intent(PhoneChargeActivity.this,WebViewActivity.class);
+				startActivity(intent2);
 				break;
 			}
 		}
@@ -94,7 +121,6 @@ public class PhoneChargeActivity extends Activity {
 						String phone = "";
 						while(pCur.moveToNext())
 							   phone = pCur.getString(pCur.getColumnIndex(Phone.NUMBER));
-						AutoCompleteTextView actv=(AutoCompleteTextView)findViewById(R.id.phone_number);
 						actv.setText(phone);
 						TextView target=(TextView)findViewById(R.id.charge_target);
 						target.setText(name);
@@ -153,7 +179,7 @@ public class PhoneChargeActivity extends Activity {
 			ll.addView(amountChartView, new LinearLayout.LayoutParams(-1, -2,
 					1.0F));
 			chart.findViewById(R.id.chart_hint_info).setVisibility(8);
-			// amountChartView.findViewById(R.id.chart_content).addOnClickListener();
+			amountChartView.findViewById(R.id.chart_content).setOnClickListener(listener);
 		}
 	}
 
